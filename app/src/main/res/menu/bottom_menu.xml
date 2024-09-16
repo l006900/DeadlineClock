@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottom_home"
+        android:icon="@drawable/baseline_home_24"
+        android:title="主页" />
+
+    <item
+        android:id="@+id/bottom_find"
+        android:icon="@drawable/baseline_reorder_24"
+        android:title="发现"/>
+
+    <item
+        android:id="@+id/bottom_mine"
+        android:icon="@drawable/baseline_perm_identity_24"
+        android:title="我的"/>
+
+
+</menu>

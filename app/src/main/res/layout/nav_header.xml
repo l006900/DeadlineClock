@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:padding="10dp"
+    android:background="#F4D4C7">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/icon_head"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:src="@drawable/touxiang1"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop"
+        android:clipChildren="false"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="11111"
+        android:textSize="14dp"/>
+
+</RelativeLayout>

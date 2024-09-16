@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="zhonghui">#BBB5AC</color>
+    <color name="blue">#93D5DC</color>
+    <color name="green">#1BA784</color>
+    <color name="red">#C21F30</color>
+    <color name="deepblue">#134857</color>
+    <color name="pink">#F19790</color>
+    <color name="deep">#363433</color>
+    <color name="yellow">#FBB957</color>
+    <color name="pep">#BA2F7B</color>
+    <color name="origen">#F15642</color>
+    <color name="touming">#00FFFFFF</color>
+
+</resources>
