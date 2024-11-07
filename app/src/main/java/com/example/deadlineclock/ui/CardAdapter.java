@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.deadlineclock.R;
 import com.example.deadlineclock.util.ScreenUtil;
 
@@ -45,20 +46,17 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        //News news = newsList.get(i);
         Card card = cards.get(position);
-        //System.out.println(card.toString());
         //放入照片
-        holder.card_image.setImageResource(card.getImageId());
+        Glide.with(context).load(card.getImageUrl()).into(holder.card_image);
+//        holder.card_image.setImageResource(card.getImageId());
         ViewGroup.LayoutParams params = holder.card_image.getLayoutParams();
         //TODO 显然，这高度是由这个参数决定的，如果我们知道了宽的大小width，那么我们就能知道实际缩放比
         //获取屏幕的宽度
         int screenWidth = ScreenUtil.getScreenWidth(context);
-        //Log.d("height",String.valueOf(screenWidth));
         //调整放入图片的大小，保证宽一定是屏幕的一半，高度随着缩放而改变
         float scale = (float)card.getHeight() / (float)card.getWidth();
         params.height =  (int) (screenWidth/2 * scale);
-        //.d("params.width",String.valueOf(screenWidth));
         //设置图片的参数
         holder.card_image.setLayoutParams(params);
         //放入文字
@@ -97,12 +95,14 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.MyViewHolder> 
     //Item类
     public static class Card {
         private String title;
+        private String imageUrl;
         private int imageId;
         private int width;
         private int height;
 
-        public Card(String title, int imageId, int width, int height) {
+        public Card(String title, String imageUrl, int imageId, int width, int height) {
             this.title = title;
+            this.imageUrl = imageUrl;
             this.imageId = imageId;
             this.width = width;
             this.height = height;
@@ -118,6 +118,10 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.MyViewHolder> 
 
         public String getTitle() {
             return title;
+        }
+
+        public String getImageUrl() {
+            return imageUrl;
         }
 
         public int getImageId() {

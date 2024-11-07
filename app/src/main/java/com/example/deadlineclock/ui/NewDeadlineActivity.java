@@ -84,12 +84,10 @@ public class NewDeadlineActivity extends AppCompatActivity {
                 editor.putInt("START_DAY", dayOfMonth);
                 editor.apply();
 
-
                 Button startdate = findViewById(R.id.startdate);
                 startdate.setText(String.valueOf(year) + "年"
                         + String.valueOf(month + 1) + "月"
                         + String.valueOf(dayOfMonth) + "日");
-
             }
         };
 

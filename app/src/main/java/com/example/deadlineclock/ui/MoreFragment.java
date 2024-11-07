@@ -110,15 +110,15 @@ public class MoreFragment extends Fragment {
 
         //这里是添加图片素材的地方
         List<CardAdapter.Card> cards = new ArrayList<>();
-        cards.add(new CardAdapter.Card("吃樱桃", R.drawable.f1, 643, 900));
-        cards.add(new CardAdapter.Card("打游戏", R.drawable.f2, 1117, 1800));
-        cards.add(new CardAdapter.Card("红发", R.drawable.f3, 1286, 1964));
-        cards.add(new CardAdapter.Card("绿毛", R.drawable.f4, 1138, 1532));
-        cards.add(new CardAdapter.Card("端午快乐", R.drawable.f5, 1280, 720));
-        cards.add(new CardAdapter.Card("吃樱桃", R.drawable.f1, 643, 900));
-        cards.add(new CardAdapter.Card("打游戏", R.drawable.f2, 1117, 1800));
-        cards.add(new CardAdapter.Card("红发", R.drawable.f3, 1286, 1964));
-        cards.add(new CardAdapter.Card("绿毛", R.drawable.f4, 1138, 1532));
+        cards.add(new CardAdapter.Card("吃樱桃", null, R.drawable.f1, 643, 900));
+        cards.add(new CardAdapter.Card("打游戏", null, R.drawable.f2, 1117, 1800));
+        cards.add(new CardAdapter.Card("红发", null, R.drawable.f3, 1286, 1964));
+        cards.add(new CardAdapter.Card("绿毛", null, R.drawable.f4, 1138, 1532));
+        cards.add(new CardAdapter.Card("端午快乐", null, R.drawable.f5, 1280, 720));
+        cards.add(new CardAdapter.Card("吃樱桃", null, R.drawable.f1, 643, 900));
+        cards.add(new CardAdapter.Card("打游戏", null, R.drawable.f2, 1117, 1800));
+        cards.add(new CardAdapter.Card("红发", null, R.drawable.f3, 1286, 1964));
+        cards.add(new CardAdapter.Card("绿毛", null, R.drawable.f4, 1138, 1532));
 
         //找到RV
         recyclerView = view.findViewById(R.id.findRV);

@@ -88,8 +88,10 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
 
     //OKHttp
-    implementation("com.squareup.okhttp3:okhttp:4.10.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
 
+    //mmkv
+    implementation("com.tencent:mmkv:1.3.9")
 
 
 
