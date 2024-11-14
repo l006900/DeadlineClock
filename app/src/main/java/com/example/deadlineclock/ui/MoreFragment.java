@@ -27,6 +27,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.example.deadlineclock.R;
 import com.google.android.material.navigation.NavigationView;
 

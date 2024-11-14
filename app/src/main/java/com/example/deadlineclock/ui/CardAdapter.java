@@ -48,8 +48,8 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.MyViewHolder> 
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Card card = cards.get(position);
         //放入照片
-        Glide.with(context).load(card.getImageUrl()).into(holder.card_image);
-//        holder.card_image.setImageResource(card.getImageId());
+//        Glide.with(context).load(card.getImageUrl()).into(holder.card_image);
+        holder.card_image.setImageResource(card.getImageId());
         ViewGroup.LayoutParams params = holder.card_image.getLayoutParams();
         //TODO 显然，这高度是由这个参数决定的，如果我们知道了宽的大小width，那么我们就能知道实际缩放比
         //获取屏幕的宽度
