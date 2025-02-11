@@ -1,7 +1,12 @@
 package com.example.deadlineclock.ui;
 
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,6 +28,22 @@ public class MainMainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainmain);
+
+        // 设置沉浸式模式
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);
+            window.setNavigationBarColor(Color.TRANSPARENT);
+        }
+
+
         //初始化控件
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnavigation);
 
@@ -32,11 +53,11 @@ public class MainMainActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if (item.getItemId()==R.id.bottom_home){
+                if (item.getItemId() == R.id.bottom_home) {
                     selectedFragment(0);
-                }else if(item.getItemId()==R.id.bottom_find){
+                } else if (item.getItemId() == R.id.bottom_find) {
                     selectedFragment(1);
-                }else {
+                } else {
                     selectedFragment(2);
                 }
 
@@ -48,25 +69,25 @@ public class MainMainActivity extends AppCompatActivity {
     private void selectedFragment(int position) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         hideFragment(fragmentTransaction);
-        if(position == 0){
-            if (mHomeFragment == null){
+        if (position == 0) {
+            if (mHomeFragment == null) {
                 mHomeFragment = new HomeFragment();
-                fragmentTransaction.add(R.id.bottomframelayout,mHomeFragment);
-            }else {
+                fragmentTransaction.add(R.id.bottomframelayout, mHomeFragment);
+            } else {
                 fragmentTransaction.show(mHomeFragment);
             }
-        }else if (position == 1){
-            if (mMoreFragment == null){
+        } else if (position == 1) {
+            if (mMoreFragment == null) {
                 mMoreFragment = new MoreFragment();
-                fragmentTransaction.add(R.id.bottomframelayout,mMoreFragment);
-            }else {
+                fragmentTransaction.add(R.id.bottomframelayout, mMoreFragment);
+            } else {
                 fragmentTransaction.show(mMoreFragment);
             }
-        }else{
-            if (mMineFragment == null){
+        } else {
+            if (mMineFragment == null) {
                 mMineFragment = new MineFragment();
-                fragmentTransaction.add(R.id.bottomframelayout,mMineFragment);
-            }else {
+                fragmentTransaction.add(R.id.bottomframelayout, mMineFragment);
+            } else {
                 fragmentTransaction.show(mMineFragment);
             }
         }
@@ -76,16 +97,16 @@ public class MainMainActivity extends AppCompatActivity {
 
     }
 
-    private void hideFragment(FragmentTransaction fragmentTransaction){
-        if (mHomeFragment!=null){
+    private void hideFragment(FragmentTransaction fragmentTransaction) {
+        if (mHomeFragment != null) {
             fragmentTransaction.hide(mHomeFragment);
         }
 
-        if (mMoreFragment!=null){
+        if (mMoreFragment != null) {
             fragmentTransaction.hide(mMoreFragment);
         }
 
-        if (mMineFragment!=null){
+        if (mMineFragment != null) {
             fragmentTransaction.hide(mMineFragment);
         }
     }

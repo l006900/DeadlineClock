@@ -40,7 +40,7 @@ public class DateDadaHelper extends SQLiteOpenHelper {
 
     }
 
-    public  String addone(DateBean dateBean){
+    public String addone(DateBean dateBean){
 
         ContentValues cv = new ContentValues();
         cv.put(COLUMN_TITLE, dateBean.getTitle());
@@ -68,7 +68,7 @@ public class DateDadaHelper extends SQLiteOpenHelper {
         return "success";
     }
 
-    public  String updateOne(DateBean dateBean){
+    public String updateOne(DateBean dateBean){
 
         ContentValues cv = new ContentValues();
         cv.put(COLUMN_TITLE, dateBean.getTitle());
